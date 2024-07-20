@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Irfan & Novita - The Wedding</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="shortcut icon"
       href="src/img/icons/favicons.png"
@@ -29,6 +30,9 @@
             roboto: ["Roboto, sans-serif"],
             robotoSerif: ["Roboto Serif, serif"],
           },
+          boxShadow: {
+            "t-sm": "0 -1px 2px 0 rgba(0, 0, 0, 0.05)",
+          },
         },
       },
     };
@@ -37,7 +41,7 @@
     <!-- intro -->
     <div
       id="intro"
-      class="z-[999] transition-transform duration-700 bg-white fixed inset-0 w-screen h-screen translate-y-[0]"
+      class="z-[999] hidden transition-transform duration-700 bg-white fixed inset-0 w-screen h-screen translate-y-[0]"
     >
       <div
         class="container mx-auto px-4 flex flex-col justify-center items-center h-full gap-4"
@@ -76,7 +80,7 @@
       <!-- music toggle -->
       <div
         id="toggle-button"
-        class="z-[2] fixed md:bottom-[25px] bottom-[75px] md:left-[25px] left-[20px] bg-stone-700 rounded-full p-1 cursor-pointer"
+        class="z-[3] fixed md:bottom-[25px] bottom-[75px] md:left-[25px] left-[20px] bg-stone-700 rounded-full p-1 cursor-pointer"
       >
         <svg
           id="play"
@@ -121,11 +125,11 @@
       <!-- defaultnavbar -->
       <div
         id="default-navbar"
-        class="z-[3] fixed top-0 left-0 right-0 bg-transparent text-white transition-all"
+        class="z-[4] fixed top-0 left-0 right-0 bg-transparent text-white transition-all"
       >
         <!-- default navbar -->
         <nav
-          class="z-[3] container mx-auto px-4 hidden md:flex items-center justify-between h-[55px]"
+          class="z-[4] container mx-auto px-4 hidden md:flex items-center justify-between h-[55px]"
         >
           <a class="text-lg md:text-xl font-normal font-robotoSerif" href="#"
             >The Wedding</a
@@ -141,7 +145,7 @@
       <!-- default navbar -->
       <!-- mobile nav -->
       <nav
-        class="z-[3] shadow-4xl transition-all md:hidden h-[55px] mx-auto px-4 bg-white grid grid-cols-4 items-stretch gap-x-1 justify-between fixed bottom-0 left-0 right-0"
+        class="z-[4] shadow-t-sm transition-all md:hidden h-[55px] mx-auto px-4 bg-white grid grid-cols-4 items-stretch gap-x-1 justify-between fixed bottom-0 left-0 right-0"
       >
         <a
           class="flex flex-col justify-center items-center transition-all hover:bg-stone-200"
@@ -245,11 +249,23 @@
     <section id="about-us" class="pt-14 pb-10 md:pt-24">
       <div class="container mx-auto px-4 text-stone-700">
         <h2
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
           class="font-robotoSerif text-base md:text-xl font-semibold text-center mb-2"
         >
           Assalamualaikum Wr. Wb.
         </h2>
-        <p class="text-sm md:text-base text-center">
+        <p
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          class="text-sm md:text-base text-center"
+        >
           Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang
           <span class="font-medium" id="text-2">Bapak/Ibu/Saudara/i</span> untuk
           hadir dalam pernikahan kami
@@ -259,14 +275,35 @@
           class="grid items-center justify-center md:gap-x-10 grid-cols-1 md:grid-cols-6 py-8 text-stone-700"
         >
           <img
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
             loading="lazy"
             class="md:col-span-2 aspect-square rounded-t-full md:rounded-br-full shadow-lg"
             src="src/img/gallery/couple-2.jpg"
             alt="Irfan & Novita"
           />
           <div class="md:col-span-4">
-            <h2 class="font-semibold text-base pt-8">ABOUT US</h2>
-            <div class="my-2">
+            <h2
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="font-semibold text-base pt-8"
+            >
+              ABOUT US
+            </h2>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="220"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="my-2"
+            >
               <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
                 Irfan Hardiansyah Putra
               </h3>
@@ -274,10 +311,23 @@
                 Putra dari Bapak Suhardi dan (Almh.) Ibu Sumiati
               </p>
             </div>
-            <span class="font-robotoSerif font-semibold text-base md:text-xl"
+            <span
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="240"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="font-robotoSerif font-semibold text-base md:text-xl"
               >&</span
             >
-            <div class="my-2">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="240"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="my-2"
+            >
               <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
                 Novita Ayuni, S.Pd
               </h3>
@@ -285,7 +335,14 @@
                 Putri dari Bapak Yudi Junaidi dan Ibu Pristawati
               </p>
             </div>
-            <div class="my-2">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="280"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="my-2"
+            >
               <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
                 Perjalanan cinta
               </h3>
@@ -298,7 +355,14 @@
                 lebih dalam.
               </p>
             </div>
-            <div class="my-2">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="my-2"
+            >
               <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
                 Memantapkan pilihan
               </h3>
@@ -323,55 +387,69 @@
       class="py-10 md:py-24 bg-gradient-to-tr from-stone-100 from-30% to-stone-300 to-70%"
     >
       <div class="container mx-auto px-4">
-        <h2 class="font-semibold text-base pt-8 text-center text-stone-700">
+        <h2
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="240"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          class="font-semibold text-base pt-8 text-center text-stone-700"
+        >
           GALLERY
         </h2>
-        <div class="swiper my-5">
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="350"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          class="swiper my-5"
+        >
           <div class="swiper-wrapper">
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/1.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/1.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/2.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/2.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/3.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/3.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/4.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/4.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/5.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/5.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/6.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/6.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/7.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/7.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/8.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/8.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/9.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/9.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/10.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/10.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/11.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/11.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/12.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/12.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/13.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/13.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/14.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/14.jpg')]"
             ></div>
             <div
-              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/15.jpg')]"
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[450px] md:w-[350px] md:h-[550px] bg-[url('src/img/gallery/gallery-fix/15.jpg')]"
             ></div>
           </div>
         </div>
@@ -382,14 +460,28 @@
     <!-- section details -->
     <section id="details">
       <div class="container mx-auto px-4 text-stone-700">
-        <h2 class="font-semibold text-base pt-8 text-center">
+        <h2
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="240"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          class="font-semibold text-base pt-8 text-center"
+        >
           WEDDING DETAILS
         </h2>
         <div class="md:flex md:justify-center pt-10">
           <div
             class="grid items-center gap-x-5 md:gap-x-36 gap-y-10 grid-cols-1 md:grid-cols-3"
           >
-            <div class="flex flex-col gap-3 justify-center w-full">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="240"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class="flex flex-col gap-3 justify-center w-full"
+            >
               <h2 class="text-base md:text-xl font-robotoSerif font-semibold">
                 Akad Nikah
               </h2>
@@ -455,6 +547,11 @@
               </p>
             </div>
             <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               class="flex text-sm md:text-base flex-col gap-3 justify-center w-full"
             >
               <h2 class="text-base md:text-xl font-robotoSerif font-semibold">
@@ -521,7 +618,14 @@
                 >Jalan Flores II
               </p>
             </div>
-            <div class="">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-delay="350"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              class=""
+            >
               <form
                 class="flex flex-col gap-4"
                 action="https://script.google.com/macros/s/AKfycbzgG6W2ASH7JXkfXDbYrk8hTHx6mBXlC7E3Pip-fz1ozpGXh0sRQ7bClIXaZBKAhOktig/exec"
@@ -595,9 +699,14 @@
 
     <!-- send gift -->
     <section
-      class="container mx-auto px-4 flex justify-center items-center gap-10 py-10 md:py-24 max-w-3xl"
+      class="container w-full md:max-w-2xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 py-10 md:py-24"
     >
       <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="240"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
         class="w-full h-full bg-stone-200 text-stone-700 p-4 flex flex-col items-center gap-1 rounded-lg"
       >
         <svg
@@ -628,6 +737,11 @@
         </button>
       </div>
       <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="300"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
         class="w-full h-full bg-stone-200 text-stone-700 p-4 flex flex-col items-center gap-1 rounded-lg"
       >
         <svg
@@ -660,7 +774,14 @@
 
     <!-- section countdown -->
     <section class="pb-10 md:pb-24">
-      <div class="my-10 text-stone-700">
+      <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        class="my-10 text-stone-700"
+      >
         <h2
           class="font-robotoSerif text-xl md:text-4xl font-semibold text-center mb-2"
         >
@@ -699,6 +820,11 @@
       <div>
         <div class="flex justify-center">
           <a
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="350"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
             target="_blank"
             href="https://maps.app.goo.gl/CZ4eYRkQz17skqfK6"
             class="bg-stone-800 hover:bg-stone-600 text-white rounded-lg px-4 py-2 mb-2"
@@ -706,6 +832,11 @@
           >
         </div>
         <iframe
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="350"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
           class="container mx-auto px-4 w-full rounded-xl"
           src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d996.1195518807358!2d99.0558822!3d2.9647272!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwNTcnNTIuNSJOIDk5wrAwMycyMS4xIkU!5e0!3m2!1sid!2sid!4v1721382672300!5m2!1sid!2sid"
           height="450"
@@ -747,6 +878,10 @@
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="src/script.js"></script>
   </body>
 </html>
