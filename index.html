@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Irfan & Novita - The Wedding</title>
+    <link
+      rel="shortcut icon"
+      href="src/img/icons/favicons.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            roboto: ["Roboto, sans-serif"],
+            robotoSerif: ["Roboto Serif, serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <body class="font-roboto">
+    <!-- intro -->
+    <div
+      id="intro"
+      class="z-[999] transition-transform duration-700 bg-white fixed inset-0 w-screen h-screen translate-y-[0]"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-col justify-center items-center h-full gap-4"
+      >
+        <img
+          loading="lazy"
+          class="w-full md:max-w-xl rounded-lg shadow-md"
+          src="/src/img/gallery/wedding-ring.jpg"
+          alt="Irfan dan Novita"
+        />
+        <p class="text-sm md:text-base font-normal text-stone-700 text-center">
+          Kepada <span class="font-medium" id="text">Bapak/Ibu/Saudara/i </span>
+        </p>
+        <p class="text-sm md:text-base font-normal text-stone-600 text-center">
+          Dengan gembira kami mengundang Anda untuk hadir dan merayakan
+          pernikahan kami.
+        </p>
+        <button
+          class="bg-stone-800 hover:bg-stone-600 transition-all px-4 py-2 text-sm md:text-base font-normal text-white rounded-lg"
+          onclick="toggleOpen()"
+        >
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+    <!-- intro -->
+    <!-- music -->
+    <audio id="music">
+      <source src="/src/music/sampaiJadiDebu.mp3" type="audio/mpeg" />
+    </audio>
+    <!-- music -->
+    <header
+      id="home"
+      class="relative bg-[url('/src/img/gallery/nav.jpg')] bg-center bg-cover bg-no-repeat h-screen"
+    >
+      <!-- music toggle -->
+      <div
+        id="toggle-button"
+        class="z-[2] fixed md:bottom-[25px] bottom-[75px] md:left-[25px] left-[20px] bg-stone-700 rounded-full p-1 cursor-pointer"
+      >
+        <svg
+          id="play"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"
+          />
+        </svg>
+        <svg
+          id="pause"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </div>
+      <!-- music toggle -->
+      <!-- cover black 70 -->
+      <div class="absolute inset-0 z-[1] bg-black/70"></div>
+      <!-- cover black 70 -->
+      <!-- defaultnavbar -->
+      <div
+        id="default-navbar"
+        class="z-[3] fixed top-0 left-0 right-0 bg-transparent text-white transition-all"
+      >
+        <!-- default navbar -->
+        <nav
+          class="z-[3] container mx-auto px-4 hidden md:flex items-center justify-between h-[55px]"
+        >
+          <a class="text-lg md:text-xl font-normal font-robotoSerif" href="#"
+            >The Wedding</a
+          >
+          <div class="flex items-center gap-x-4">
+            <a class="text-base font-normal" href="#home">Home</a>
+            <a class="text-base font-normal" href="#about-us">About Us</a>
+            <a class="text-base font-normal" href="#gallery">Gallery</a>
+            <a class="text-base font-normal" href="#details">Details</a>
+          </div>
+        </nav>
+      </div>
+      <!-- default navbar -->
+      <!-- mobile nav -->
+      <nav
+        class="z-[3] shadow-4xl transition-all md:hidden h-[55px] mx-auto px-4 bg-white grid grid-cols-4 items-stretch gap-x-1 justify-between fixed bottom-0 left-0 right-0"
+      >
+        <a
+          class="flex flex-col justify-center items-center transition-all hover:bg-stone-200"
+          href="#home"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-5 text-stone-700"
+          >
+            <path
+              d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"
+            />
+            <path
+              d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"
+            />
+          </svg>
+          <span class="text-sm text-stone-700 font-medium">Home</span></a
+        >
+        <a
+          class="flex flex-col justify-center items-center transition-all hover:bg-stone-200"
+          href="#about-us"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-5 text-stone-700"
+          >
+            <path
+              d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"
+            />
+          </svg>
+          <span class="text-sm text-stone-700 font-medium">About Us</span></a
+        >
+        <a
+          class="flex flex-col justify-center items-center transition-all hover:bg-stone-200"
+          href="#gallery"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-5 text-stone-700"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-sm text-stone-700 font-medium">Gallery</span></a
+        >
+        <a
+          class="flex flex-col justify-center items-center transition-all hover:bg-stone-200"
+          href="#details"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-5 text-stone-700"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-sm text-stone-700 font-medium">Details</span></a
+        >
+      </nav>
+      <!-- mobile nav -->
+      <!-- section introduce -->
+      <section class="flex flex-col justify-around gap-2 h-full">
+        <h1
+          class="z-[2] md:text-7xl text-5xl font-semibold pt-[55px] text-center text-white font-robotoSerif"
+        >
+          Irfan & Novita
+        </h1>
+        <div
+          class="z-[2] container mx-auto px-4 w-full md:max-w-5xl flex justify-center pb-5 md:pb-0"
+        >
+          <p
+            class="text-center font-normal text-sm md:text-base text-stone-700 bg-white p-4 rounded-xl"
+          >
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+            untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung
+            dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa
+            kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar
+            terdapat tanda-tanda bagi kaum yang berfikir" <br />
+            <span class="font-semibold">(Q.S Ar Rum : 21)</span>
+          </p>
+        </div>
+      </section>
+      <!-- section introduce -->
+    </header>
+
+    <!-- section about us -->
+    <section id="about-us" class="pt-14 pb-10 md:pt-24">
+      <div class="container mx-auto px-4 text-stone-700">
+        <h2
+          class="font-robotoSerif text-base md:text-xl font-semibold text-center mb-2"
+        >
+          Assalamualaikum Wr. Wb.
+        </h2>
+        <p class="text-sm md:text-base text-center">
+          Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang
+          <span class="font-medium" id="text-2">Bapak/Ibu/Saudara/i</span> untuk
+          hadir dalam pernikahan kami
+        </p>
+
+        <div
+          class="grid items-center justify-center md:gap-x-10 grid-cols-1 md:grid-cols-6 py-8 text-stone-700"
+        >
+          <img
+            loading="lazy"
+            class="md:col-span-2 aspect-square rounded-t-full md:rounded-br-full shadow-lg"
+            src="/src/img/gallery/couple-2.jpg"
+            alt="Irfan & Novita"
+          />
+          <div class="md:col-span-4">
+            <h2 class="font-semibold text-base pt-8">ABOUT US</h2>
+            <div class="my-2">
+              <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
+                Irfan Hardiansyah Putra
+              </h3>
+              <p class="font-normal text-sm md:text-base text-pretty">
+                Putra dari Bapak Suhardi dan (Almh.) Ibu Sumiati
+              </p>
+            </div>
+            <span class="font-robotoSerif font-semibold text-base md:text-xl"
+              >&</span
+            >
+            <div class="my-2">
+              <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
+                Novita Ayuni, S.Pd
+              </h3>
+              <p class="font-normal text-sm md:text-base text-pretty">
+                Putri dari Bapak Yudi Junaidi dan Ibu Pristawati
+              </p>
+            </div>
+            <div class="my-2">
+              <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
+                Perjalanan cinta
+              </h3>
+              <p class="font-normal text-sm md:text-base text-pretty">
+                13 Mei 2016, Pertemuan pertama menjadi pembuka lembaran baru,
+                kami saling bertukar nomor telepon atau WhatsApp. Kami mulai
+                berkomunikasi, terlibat dalam percakapan yang penuh tanda tanya
+                dan senyuman. Meski saat itu hubungan belum terjalin, namun
+                setiap kata-kata menjadi benih yang tumbuh menjadi kisah yang
+                lebih dalam.
+              </p>
+            </div>
+            <div class="my-2">
+              <h3 class="text-base md:text-xl font-semibold font-robotoSerif">
+                Memantapkan pilihan
+              </h3>
+              <p class="font-normal text-sm md:text-base text-pretty">
+                9 Juli 2023, Hari itu pun tiba, dengan sikap hormat dan tulus,
+                abang menyampaikan niat baiknya untuk melanjutkan hubungan kami
+                ke jenjang yang lebih serius. Momen itu menjadi langkah awal
+                dari komitmen yang lebih mendalam antara kedua keluarga kami,
+                serta permulaan dari perjalanan hidup yang akan kami jalani
+                bersama.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section about us -->
+
+    <!-- section gallery -->
+    <section
+      id="gallery"
+      class="py-10 md:py-24 bg-gradient-to-tr from-stone-100 from-30% to-stone-300 to-70%"
+    >
+      <div class="container mx-auto px-4">
+        <h2 class="font-semibold text-base pt-8 text-center text-stone-700">
+          GALLERY
+        </h2>
+        <div class="swiper my-5">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/1.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/2.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/3.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/4.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/5.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/6.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/7.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/8.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/9.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/10.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/11.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/12.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/13.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/14.jpg')]"
+            ></div>
+            <div
+              class="swiper-slide swiper-lazy shadow rounded-t-[150px] rounded-b-[150px] bg-center bg-cover w-full h-[550px] md:w-[350px] md:h-[550px] bg-[url('/src/img/gallery/gallery-fix/15.jpg')]"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section gallery -->
+
+    <!-- section details -->
+    <section id="details">
+      <div class="container mx-auto px-4 text-stone-700">
+        <h2 class="font-semibold text-base pt-8 text-center">
+          WEDDING DETAILS
+        </h2>
+        <div class="md:flex md:justify-center pt-10">
+          <div
+            class="grid items-center gap-x-5 md:gap-x-36 gap-y-10 grid-cols-1 md:grid-cols-3"
+          >
+            <div class="flex flex-col gap-3 justify-center w-full">
+              <h2 class="text-base md:text-xl font-robotoSerif font-semibold">
+                Akad Nikah
+              </h2>
+              <p class="flex text-sm md:text-base items-center gap-x-2">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                    />
+                  </svg>
+                </span>
+                Jum'at, 12 Januari 2024
+              </p>
+              <p class="flex text-sm md:text-base items-center gap-x-2">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg> </span
+                >09:00 WIB - Selesai
+              </p>
+              <p class="flex text-sm md:text-base items-center gap-x-2">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    />
+                  </svg> </span
+                >Jalan Flores II
+              </p>
+            </div>
+            <div
+              class="flex text-sm md:text-base flex-col gap-3 justify-center w-full"
+            >
+              <h2 class="text-base md:text-xl font-robotoSerif font-semibold">
+                Resepsi
+              </h2>
+              <p class="flex items-center gap-x-2">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                    />
+                  </svg>
+                </span>
+                Sabtu, 13 Januari 2024
+              </p>
+              <p class="flex items-center gap-x-2">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg> </span
+                >10:00 WIB - Selesai
+              </p>
+              <p class="flex items-center gap-x-2">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5 md:size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    />
+                  </svg> </span
+                >Jalan Flores II
+              </p>
+            </div>
+            <div class="">
+              <form
+                class="flex flex-col gap-4"
+                action="https://script.google.com/macros/s/AKfycbzgG6W2ASH7JXkfXDbYrk8hTHx6mBXlC7E3Pip-fz1ozpGXh0sRQ7bClIXaZBKAhOktig/exec"
+                method="POST"
+                id="my-form"
+              >
+                <div class="flex flex-col gap-1">
+                  <label class="text-sm md:text-base" for="">Nama</label>
+                  <input
+                    class="border-b text-sm md:text-base pb-1 focus:outline-none border-stone-700 w-full"
+                    type="text"
+                    placeholder="Masukkan nama anda"
+                    name="nama"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="text-sm md:text-base" for="">Pesan</label>
+                  <input
+                    class="border-b text-sm md:text-base pb-1 focus:outline-none border-stone-700 w-full"
+                    type="text"
+                    name="pesan"
+                    placeholder="Masukkan pesan anda"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="text-sm md:text-base" for="">Kehadiran</label>
+                  <select
+                    class="overflow-hidden border-b border-stone-700 w-full pb-1.5 focus:outline-none text-sm md:text-base"
+                    name="kehadiran"
+                    id=""
+                    required
+                  >
+                    <option
+                      class="text-sm md:text-base"
+                      value=""
+                      disabled
+                      selected
+                    >
+                      Harap dipilih
+                    </option>
+                    <option class="text-sm md:text-base" value="hadir">
+                      Hadir
+                    </option>
+                    <option class="text-sm md:text-base" value="tidak-hadir">
+                      Tidak Hadir
+                    </option>
+                    <option class="text-sm md:text-base" value="masih-ragu">
+                      Masih Ragu
+                    </option>
+                  </select>
+                </div>
+                <button
+                  name="submit"
+                  type="submit"
+                  class="bg-stone-800 hover:bg-stone-600 transition-all text-white px-4 py-2 rounded-lg"
+                >
+                  Kirim
+                </button>
+                <button id="resetButton" class="hidden" type="reset">
+                  Reset
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section details -->
+
+    <!-- send gift -->
+    <section
+      class="container mx-auto px-4 flex justify-center items-center gap-10 py-10 md:py-24 max-w-3xl"
+    >
+      <div
+        class="w-full h-full bg-stone-200 text-stone-700 p-4 flex flex-col items-center gap-1 rounded-lg"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-14"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+          />
+        </svg>
+        <h3 class="text-sm md:text-base text-center">
+          Irfan Hardiansyah Putra
+        </h3>
+        <p class="text-sm md:text-base">BCA - 8255183431</p>
+        <input class="hidden" type="text" id="myInput1" value="8255183431" />
+        <button
+          id="copied1"
+          onclick="myFunction1()"
+          class="bg-stone-800 hover:bg-stone-600 transition-all text-white px-3 py-1 rounded-lg text-sm md:text-base"
+        >
+          Salin no rekening
+        </button>
+      </div>
+      <div
+        class="w-full h-full bg-stone-200 text-stone-700 p-4 flex flex-col items-center gap-1 rounded-lg"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-14"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+          />
+        </svg>
+        <h3 class="text-sm md:text-base text-center">Novita Ayuni</h3>
+        <p class="text-sm md:text-base">BSI - 7244231092</p>
+        <input class="hidden" type="text" id="myInput2" value="7244231092" />
+        <button
+          onclick="myFunction2()"
+          id="copied2"
+          class="bg-stone-800 hover:bg-stone-600 transition-all text-white px-3 py-1 rounded-lg text-sm md:text-base"
+        >
+          Salin no rekening
+        </button>
+      </div>
+    </section>
+    <!-- secn gift -->
+
+    <!-- section countdown -->
+    <section class="pb-10 md:pb-24">
+      <div class="my-10 text-stone-700">
+        <h2
+          class="font-robotoSerif text-xl md:text-4xl font-semibold text-center mb-2"
+        >
+          Countdown acara
+        </h2>
+        <div
+          id="countdown"
+          class="flex justify-center flex-wrap gap-5 font-robotoSerif"
+        >
+          <div
+            class="flex flex-col items-center justify-center text-xl md:text-3xl"
+          >
+            <h3 id="countdown-hari"></h3>
+            <p class="font-medium">Hari</p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center text-xl md:text-3xl"
+          >
+            <h3 id="countdown-jam"></h3>
+            <p class="font-medium">Jam</p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center text-xl md:text-3xl"
+          >
+            <h3 id="countdown-menit"></h3>
+            <p class="font-medium">Menit</p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center text-xl md:text-3xl"
+          >
+            <h3 id="countdown-detik"></h3>
+            <p class="font-medium">Detik</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-center">
+          <a
+            target="_blank"
+            href="https://maps.app.goo.gl/CZ4eYRkQz17skqfK6"
+            class="bg-stone-800 hover:bg-stone-600 text-white rounded-lg px-4 py-2 mb-2"
+            >Lokasi</a
+          >
+        </div>
+        <iframe
+          class="container mx-auto px-4 w-full rounded-xl"
+          src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d996.1195518807358!2d99.0558822!3d2.9647272!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwNTcnNTIuNSJOIDk5wrAwMycyMS4xIkU!5e0!3m2!1sid!2sid!4v1721382672300!5m2!1sid!2sid"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+    <!-- section countdown -->
+
+    <!-- section footer -->
+    <footer class="pb-[55px] md:pb-0 bg-stone-800 text-white">
+      <div class="py-2 flex justify-center gap-x-1 items-center">
+        <p class="text-sm md:text-base">Dibuat setulus hati</p>
+        <a
+          class="flex items-center gap-1"
+          target="_blank"
+          href="https://instagram.com/ihsandly"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            class="size-4 text-red-600"
+          >
+            <path
+              d="M2 6.342a3.375 3.375 0 0 1 6-2.088 3.375 3.375 0 0 1 5.997 2.26c-.063 2.134-1.618 3.76-2.955 4.784a14.437 14.437 0 0 1-2.676 1.61c-.02.01-.038.017-.05.022l-.014.006-.004.002h-.002a.75.75 0 0 1-.592.001h-.002l-.004-.003-.015-.006a5.528 5.528 0 0 1-.232-.107 14.395 14.395 0 0 1-2.535-1.557C3.564 10.22 1.999 8.558 1.999 6.38L2 6.342Z"
+            />
+          </svg>
+          id.</a
+        >
+      </div>
+    </footer>
+    <p class="translate-y-[0]"></p>
+    <p class="-translate-y-full"></p>
+    <!-- section footer -->
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="src/script.js"></script>
+  </body>
+</html>
